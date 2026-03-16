@@ -1,0 +1,15 @@
+:root{
+    /*CORES*/
+    --header:#3f8ef7;
+    --txt-concluido:#a0aa00;
+    --botao-check: #4caff5;
+    --botao-excluir: #f15b50;
+    
+    /*TAMANHOS*/
+    --largura-main: 500px;
+    --altura-main: 400px;
+    --altura-header: 40px;
+}
+
+main {width: var(--largura-main); height: var(--altura-main);}
+header {width: 100%; height: var(--altura-header); background-color: var(--header);}
