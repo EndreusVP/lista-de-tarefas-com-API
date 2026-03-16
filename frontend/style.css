@@ -13,7 +13,7 @@
 
 body{display: flex; align-items: center; justify-content: center; height: 100dvh;}
 
-main {width: var(--largura-main); height: var(--altura-main); border-radius: 10px; box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.122);}
+main {width: var(--largura-main); height: var(--altura-main); border-radius: 10px; box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.204);}
 header {width: 100%; height: var(--altura-header); background-color: var(--header); margin-top: -20px; border-top-left-radius: 10px; border-top-right-radius: 10px;}
 
 .lista{display: flex; flex-direction: column; gap: 20px;}
