@@ -10,12 +10,18 @@
     /*TAMANHOS*/
     --largura-main: 500px;
     --altura-main: 400px;
-    --altura-header: 40px;
+    --altura: 40px;
 }
 
 body{display: flex; align-items: center; justify-content: center; height: 100dvh;}
 
 main {width: var(--largura-main); height: var(--altura-main); border-radius: 10px; box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.204);}
-header {width: 100%; height: var(--altura-header); background-color: var(--header); margin-top: -20px; border-top-left-radius: 10px; border-top-right-radius: 10px;}
+header {width: 100%; height: var(--altura); background-color: var(--header); margin-top: -20px; border-top-left-radius: 10px; border-top-right-radius: 10px; text-align: center;}
 
 .lista{display: flex; flex-direction: column; gap: 20px;}
+
+.input{text-align: center; padding: 25px; width: 100%; height: var(--altura);}
+.input > input{width: 300px; height: 30px;}
+.input > button{width: 100px; height: 30px;}
+
+li{height: 40px; padding: 25px;}

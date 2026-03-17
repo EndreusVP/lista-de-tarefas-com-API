@@ -57,17 +57,23 @@ async function carregarTarefas() {
     tarefas.forEach(tarefa => {
 
         let estilo = ""
+        let estiloSpan = ""
 
         if(tarefa.concluida){
             estilo = "text-decoration: line-through"
+            estiloSpan += "background-color: #a0aa00; color: white"
+
         } else {
             estilo = ""
+            estiloSpan += "background-color: white; color: white"
         }
         
         lista.innerHTML += `<li style="${estilo}">
+            <span srtyle="${estiloSpan}">✓</span>
             ${tarefa.tarefa}
             <button onclick="deletarTarefa(${tarefa.id})">x</button>
             <button onclick="concluirTarefa(${tarefa.id})">✓</button>
+            <hr>
         </li>`
     });
 
