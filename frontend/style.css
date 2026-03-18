@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 *{margin: 0; padding: 0; box-sizing: border-box;}
 
 :root{
@@ -13,7 +17,7 @@
     --altura: 40px;
 }
 
-body{display: flex; align-items: center; justify-content: center; height: 100dvh;}
+body{display: flex; align-items: center; justify-content: center; height: 100dvh; font-family: roboto;}
 
 main {width: var(--largura-main); height: var(--altura-main); border-radius: 10px; box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.204);}
 header {width: 100%; height: var(--altura); background-color: var(--header); margin-top: -20px; border-top-left-radius: 10px; border-top-right-radius: 10px; text-align: center;}
@@ -21,7 +25,28 @@ header {width: 100%; height: var(--altura); background-color: var(--header); mar
 .lista{display: flex; flex-direction: column; gap: 20px;}
 
 .input{text-align: center; padding: 25px; width: 100%; height: var(--altura);}
-.input > input{width: 300px; height: 30px;}
+.input > input{width: 300px; height: 30px; background-color: rgba(138, 138, 138, 0.13); border: none; border-radius: 5px; text-align: center;}
 .input > button{width: 100px; height: 30px;}
+.input > button:hover{
+    cursor: pointer;
+}
 
-li{height: 40px; padding: 25px;}
+.adicionar{background-color: var(--txt-concluido); border: none; border-radius: 5px; color: white;}
+
+ul{width: 100%; max-height: 300px; overflow-y: auto;}
+
+li{height: 40px; width: 100%; padding: 30px; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 50px;}
+.estiloSpan{border-radius: 50%; text-align: center; justify-content: center; border: solid 1px rgba(82, 82, 82, 0.342); width: 30px; height: 30px;}
+
+.itens, .eventButtons{display: flex; flex-direction: row; gap: 10px;}
+.itens{width: 60%;}
+.eventButtons > button{width: 30px; height: 30px; border-radius: 50%;border: none; box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.204); color: white;}
+.eventButtons > button:hover{
+    cursor: pointer;
+}
+.remove{background-color: var(--botao-excluir);}
+.checkButton{background-color: var(--txt-concluido);}
+
+.linha{display: flex; align-items: center; justify-content: center; width: 100%;}
+.linha > hr{width: 80%;}
+

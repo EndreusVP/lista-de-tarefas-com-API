@@ -4,19 +4,25 @@ const input = document.getElementById("tarefa")
 async function criarTarefa() {
     const texto = input.value
 
-    //esta sendo criado o metodo POST para adicionar uma tarefa
-    await fetch("http://localhost:3000/tarefas", {
-        //diz o metodo POST
-        method: "POST",
-        //dizendo q esta sendo enviado um JSON
-        headers: {
-            "content-type": "application/json"
-        },
-        //convertendo o objeto para JSON
-        body: JSON.stringify({
-            tarefa: texto
+    if (texto === "") {
+        alert("campo vazio, digite alguma tarefa")
+    } else {
+        //esta sendo criado o metodo POST para adicionar uma tarefa
+        await fetch("http://localhost:3000/tarefas", {
+            //diz o metodo POST
+            method: "POST",
+            //dizendo q esta sendo enviado um JSON
+            headers: {
+                "content-type": "application/json"
+            },
+            //convertendo o objeto para JSON
+            body: JSON.stringify({
+                tarefa: texto
+            })
         })
-    })
+
+    }
+
 
     input.value = ""
 
@@ -33,7 +39,7 @@ async function deletarTarefa(id) {
 
 }
 
-async function concluirTarefa(id){
+async function concluirTarefa(id) {
     await fetch(`http://localhost:3000/tarefas/${id}`, {
         method: "PUT"
     })
@@ -57,24 +63,31 @@ async function carregarTarefas() {
     tarefas.forEach(tarefa => {
 
         let estilo = ""
-        let estiloSpan = ""
+        let estiloSpan = "cor: white"
 
-        if(tarefa.concluida){
-            estilo = "text-decoration: line-through"
-            estiloSpan += "background-color: #a0aa00; color: white"
+        if (tarefa.concluida) {
+            check = "text-decoration: line-through"
+            estiloSpan = "background-color: #a0aa00; color: white"
 
         } else {
-            estilo = ""
+            check = ""
             estiloSpan += "background-color: white; color: white"
         }
-        
-        lista.innerHTML += `<li style="${estilo}">
-            <span srtyle="${estiloSpan}">✓</span>
-            ${tarefa.tarefa}
-            <button onclick="deletarTarefa(${tarefa.id})">x</button>
-            <button onclick="concluirTarefa(${tarefa.id})">✓</button>
-            <hr>
-        </li>`
+
+        lista.innerHTML += `<li>
+            <div class="itens">
+                <span style="${estiloSpan}" class="estiloSpan">✓</span>
+                <span style="${check}">${tarefa.tarefa}</span>
+            </div>
+            <div class="eventButtons">
+                <button onclick="deletarTarefa(${tarefa.id})" class="remove">x</button>
+                <button onclick="concluirTarefa(${tarefa.id})" class="checkButton">✓</button>
+            </div>
+        </li>
+        <div class="linha">
+        <hr>
+        </div>`
+
     });
 
 }
